@@ -1,0 +1,23 @@
+eric's maze.txt
+10
+xxxxxxxxxxxxxxxxxxxxx
+x                   x
+x  xx                 x
+x x                 x
+x                     x
+x x                 x
+x                     x
+x x                 x
+x                     x
+x x                 x
+x                     x
+x x                 x
+x                     x
+x x                 x
+x                     x
+x                   x
+x                     x
+x x                 x
+x                     x
+x x                 x
+xxxxxxxxxxxxxxxxxxxxx

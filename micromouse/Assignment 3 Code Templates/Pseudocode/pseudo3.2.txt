@@ -1,0 +1,37 @@
+/*
+
+This pseudocode should help you implement updatePID for assignment 3.2 if you get stuck.
+
+*/
+
+int angleError = 0
+int oldAngleError = 0
+float distanceError = 0
+float oldDistanceError = 0
+float kPw = (SOME VALUE)
+float kDw = (SOME VALUE)
+float kPx = (SOME VALUE)
+float kDx = (SOME VALUE)
+
+// These should get updated by your setPIDGoal functions
+int goalAngle = 0
+int goalDistance = 0
+
+updatePID:
+	angleError = goalAngle - difference in encoder counts
+	angleCorrection = kPw * angleError + kDw * (angleError - oldAngleError)
+	set oldAngleError to current angleError
+
+	distanceError = goalDistance - average of encoder counts
+	distanceCorrection = kPx * distanceError + kDx * (distanceError - oldDistanceError)
+	set oldDistanceError to current distanceError
+
+	set left motor speed to distanceCorrection + angleCorrection
+	set right motor speed to distanceCorrection - angleCorrection
+
+	/*
+	This should get you started, but you can improve your rat's PID performance by
+	incorporating some of the tips in the code templates. You are encouraged to experiment!
+
+	You will need to add to this function to get it to work with PIDdone.
+	*/

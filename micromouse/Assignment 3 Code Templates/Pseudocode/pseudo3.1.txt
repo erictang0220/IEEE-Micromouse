@@ -1,0 +1,38 @@
+/*
+
+This pseudocode should help you implement updatePID for assignment 3.1 if you get stuck.
+
+*/
+
+int angleError = 0
+int oldAngleError = 0
+float distanceError = (SOME ARBITRARY VALUE, 0.4?)
+float oldDistanceError = distanceError
+float kPw = (SOME VALUE, 1?)
+float kDw = (SOME VALUE)
+float kPx = (SOME VALUE)
+float kDx = (SOME VALUE)
+
+updatePID:
+	angleError = difference in encoder counts
+	angleCorrection = kPw * angleError + kDw * (angleError - oldAngleError)
+	set oldAngleError to current angleError
+
+	distanceError = 0.4
+	distanceCorrection = kPx * distanceError + kDx * (distanceError - oldDistanceError)
+	set oldDistanceError to current distanceError
+
+	set left motor speed to distanceCorrection + angleCorrection
+	set right motor speed to distanceCorrection - angleCorrection
+	
+	/*
+	Since the goal of this assignment is to go forwards indefinitely, we just set the distanceError to
+	some arbitrary value. Since the error is fixed, distanceCorrection will always equal kPx times
+	whatever value you set distanceError to be. If you follow the suggested values and set kPx equal
+	to 1 and distance error to 0.4, your motors will have an effecitve base speed of 0.4. The derivative
+	term will always be zero since the distanceError doesn't change.
+
+	PD control is implemented in the angleCorrection line, and this adjustment is added (or subtracted)
+	from each motor, depending on what you treat as your positive angle direction. In the next assignment,
+	you will dynamically set distanceError based on encoder counts in order to move fixed distances.
+	*/
