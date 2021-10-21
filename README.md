@@ -17,8 +17,8 @@
 * Thickened the tracing to ensure optimal current
 
 ## Results
-* Watch the video here!
-* PCB in design and the final product!
+* Download and watch the video [here](https://github.com/erictang0220/IEEE-Micromouse/blob/main/micromouse/good%20no%20aud%202.mov)
+* [PCB in design](https://github.com/erictang0220/IEEE-Micromouse/blob/main/micromouse/Eagle%20breakout%20board.png) and the [final product](https://github.com/erictang0220/IEEE-Micromouse/blob/main/micromouse/made%20breakout%20board.png)!
 
 
 
